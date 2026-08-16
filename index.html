@@ -2372,9 +2372,7 @@ div.b-mobile {display:none;}
         await userRef.update({ 
             balance: firebase.firestore.FieldValue.increment(parseFloat(appSettings.videoBonus || 0.5)), 
             watched: firebase.firestore.FieldValue.arrayUnion(key),
-            watchTimestamps: firebase.firestore.FieldValue.arrayUnion(
-    Date.now() + (3 * 60 * 1000) + (53 * 1000)
-)
+            watchTimestamps: firebase.firestore.FieldValue.arrayUnion(Date.now())
         });
 
         tg.showAlert("Reward Claimed!");
