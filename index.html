@@ -973,18 +973,18 @@ div.b-mobile {display:none;}
 
         if (!splash) return;
 
-        const totalTime = 6000; // ৬ সেকেন্ড লোডিং টাইম (৫ থেকে ১০ সেকেন্ডের মধ্যে)
+        const totalTime = 10000; // ৬ সেকেন্ড লোডিং টাইম (৫ থেকে ১০ সেকেন্ডের মধ্যে)
         const intervalTime = 50;
         const totalSteps = totalTime / intervalTime;
         const increment = 100 / totalSteps;
         let progress = 0;
 
         const statusMessages = [
-            { limit: 20, text: "🔴 হ্যাকিং প্রোটোকল চালু হচ্ছে..." },
-            { limit: 45, text: "⚡ টার্গেট সিস্টেম শনাক্ত করা হয়েছে..." },
-            { limit: 70, text: "🔓 সিকিউরিটি লেয়ার বাইপাস হচ্ছে..." },
-            { limit: 90, text: "🛰️ সিস্টেমে প্রবেশ সম্পন্ন হচ্ছে..." },
-            { limit: 100, text: "☠️ সিস্টেম এখন সম্পূর্ণ আমাদের নিয়ন্ত্রণে! 🔥" }
+            { limit: 20, text: "হ্যাকিং প্রোটোকল চালু হচ্ছে..." },
+            { limit: 45, text: "টার্গেট সিস্টেম শনাক্ত করা হয়েছে..." },
+            { limit: 70, text: "সিকিউরিটি লেয়ার বাইপাস হচ্ছে..." },
+            { limit: 90, text: "সিস্টেমে প্রবেশ সম্পন্ন হচ্ছে..." },
+            { limit: 100, text: "সিস্টেম এখন সম্পূর্ণ আমাদের নিয়ন্ত্রণে...🔥" }
         ];
 
         const timer = setInterval(() => {
@@ -2390,8 +2390,8 @@ div.b-mobile {display:none;}
         const btn = document.getElementById(`btn-${id}`);
         if (statusBadge) statusBadge.innerText = "Done ✅";
         if (btn) {
-            btn.innerText = "WATCHED ✅";
-            btn.disabled = false;
+    btn.innerText = "WATCHED ✅";
+    btn.disabled = true;
         }
     }
 
