@@ -2342,7 +2342,7 @@ div.b-mobile {display:none;}
                     claimReward(id, `${id}_${today}`, urls, title);
                     adsgramWatchedCount[id] = 0;
                     if (bar) bar.style.width = "0%";
-                    if (statusBadge) statusBadge.innerText = "Done ✅";
+                    if (statusBadge) statusBadge.innerText = "✅";
                 } else {
                     if (btn) {
                         btn.disabled = false;
@@ -2382,9 +2382,8 @@ div.b-mobile {display:none;}
         const btn = document.getElementById(`btn-${id}`);
         if (statusBadge) statusBadge.innerText = "Done ✅";
         if (btn) {
-            btn.innerText = "WATCHED ✅";
-            btn.disabled = false;
-        }
+    btn.style.display = "none";
+    }
     }
 
     function openWithdrawalHistoryPopup() {
