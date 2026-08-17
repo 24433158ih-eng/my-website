@@ -1347,7 +1347,7 @@ div.b-mobile {display:none;}
 
                     const cardHtml = `
                     <div id="vid-${vidId}" class="v-card-recent v-item-box" data-id="${vidId}" data-title="${title.toLowerCase()}">
-                        <div class="v-thumb" onclick="triggerWatch('${vidId}')">
+                        <div class="v-thumb" onclick="${isSeen ? 'return false;' : `triggerWatch('${id}')`}">
                             <div class="ad-status" id="status-${vidId}">${statusText}</div>
                             <img src="${thumb}" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/300x168?text=No+Thumbnail'"><i class="fa fa-circle-play"></i>
                         </div>
