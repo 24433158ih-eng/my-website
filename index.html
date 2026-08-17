@@ -2378,13 +2378,13 @@ div.b-mobile {display:none;}
         const userIdStr = (currentUser ? currentUser.id : userData.userId).toString();
         const userRef = db.collection("users").doc(userIdStr);
         await userRef.update({ 
-            balance: firebase.firestore.FieldValue.increment(parseFloat(appSettings.videoBonus || 0.5)), 
+            balance: firebase.firestore.FieldValue.increment(parseFloat(appSettings.videoBonus || 1.0)), 
             watched: firebase.firestore.FieldValue.arrayUnion(key),
             watchTimestamps: firebase.firestore.FieldValue.arrayUnion(Date.now())
         });
 
         tg.showAlert("Reward Claimed!");
-       // openPlayer(urls, title);
+        openPlayer(urls, title);
 
         const statusBadge = document.getElementById(`status-${id}`);
         const btn = document.getElementById(`btn-${id}`);
