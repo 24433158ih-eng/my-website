@@ -1721,8 +1721,8 @@ div.b-mobile {display:none;}
                             <img src="${thumb}" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/300x168?text=No+Thumbnail'"><i class="fa fa-circle-play"></i>
                         </div>
                         <div style="padding:14px;"><div style="font-size:13px; font-weight:800; height:34px; overflow:hidden; line-height: 1.3; color:#fff;">${title}</div></div>
-                        <button class="watch-btn-sm" id="btn-${id}" onclick="triggerWatch('${id}')">${isSeen ? 'WATCHED ✅' : 'WATCH & EARN'}<div class="progress-bar" id="bar-${id}"></div></button>
-                    </div>`;
+                        <button class="watch-btn-sm" id="btn-${id}" onclick="triggerWatch('${id}')">${!isSeen ? `<button class="watch-btn-sm" id="btn-${id}" onclick="triggerWatch('${id}')">WATCH & EARN<div class="progress-bar" id="bar-${id}"></div></button>` : ''}
+</div>`;
                 } catch (e) {
                     console.error(e);
                 }
@@ -2342,7 +2342,7 @@ div.b-mobile {display:none;}
                     claimReward(id, `${id}_${today}`, urls, title);
                     adsgramWatchedCount[id] = 0;
                     if (bar) bar.style.width = "0%";
-                    if (statusBadge) statusBadge.innerText = "✅";
+                    if (statusBadge) statusBadge.innerText = "Done ✅";
                 } else {
                     if (btn) {
                         btn.disabled = false;
@@ -2382,8 +2382,8 @@ div.b-mobile {display:none;}
         const btn = document.getElementById(`btn-${id}`);
         if (statusBadge) statusBadge.innerText = "Done ✅";
         if (btn) {
-    btn.style.display = "none";
-    }
+    btn.remove();
+        }
     }
 
     function openWithdrawalHistoryPopup() {
